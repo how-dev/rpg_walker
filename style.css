@@ -1,0 +1,133 @@
+:root {
+    --champion-speed: .5s;
+    --cell-size: 70px;
+    --positive-cell-move-size: 70px;
+    --negative-cell-move-size: -70px;
+    --champion-width: 75%;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: #0f0028;
+}
+.space {
+    display: inline-block;
+    margin-inline: auto;
+}
+    .row {
+        display: flex;
+    }
+        .cell {
+            border: 3px dashed transparent;
+            width: var(--cell-size);
+            height: var(--cell-size);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("./sprites/grass_center.png");
+            background-size: contain;
+            background-position: center;
+            cursor: pointer;
+            transition: background-color .2s linear;
+        }
+        .cell:hover {
+            border: 3px solid rgba(0, 0, 0, 0.37);
+        }
+            .cell--selected {
+                border: 3px solid rgb(0, 255, 193);
+                animation: cellSelected .5s linear;
+            }
+
+            @keyframes cellSelected {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+.champion {
+    width: var(--champion-width);
+    height: var(--champion-width);
+    transition: transform var(--champion-speed) linear;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+    .champion__name {
+        position: absolute;
+        top: -15px;
+        left: 5px;
+    }
+
+.championMove--top {
+    transform: translateY(var(--negative-cell-move-size));
+}
+
+.championMove--bottom {
+    transform: translateY(var(--positive-cell-move-size));
+}
+
+.championMove--left {
+    transform: translateX(var(--negative-cell-move-size));
+}
+
+.championMove--right {
+    transform: translateX(var(--positive-cell-move-size));
+}
+
+.entitySprite__bottom_1 {
+    background-image: url("./sprites/mainEntity/bottom_1.png");
+}
+
+.entitySprite__bottom_2 {
+    background-image: url("./sprites/mainEntity/bottom_2.png");
+}
+
+.entitySprite__bottom_3 {
+    background-image: url("./sprites/mainEntity/bottom_3.png");
+}
+
+.entitySprite__left_1 {
+    background-image: url("./sprites/mainEntity/left_1.png");
+}
+
+.entitySprite__left_2 {
+    background-image: url("./sprites/mainEntity/left_2.png");
+}
+
+.entitySprite__left_3 {
+    background-image: url("./sprites/mainEntity/left_3.png");
+}
+
+.entitySprite__right_1 {
+    background-image: url("./sprites/mainEntity/right_1.png");
+}
+
+.entitySprite__right_2 {
+    background-image: url("./sprites/mainEntity/right_2.png");
+}
+
+.entitySprite__right_3 {
+    background-image: url("./sprites/mainEntity/right_3.png");
+}
+
+.entitySprite__top_1 {
+    background-image: url("./sprites/mainEntity/top_1.png");
+}
+
+.entitySprite__top_2 {
+    background-image: url("./sprites/mainEntity/top_2.png");
+}
+
+.entitySprite__top_3 {
+    background-image: url("./sprites/mainEntity/top_3.png");
+}
